@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <title>Exportador de calendario para UPF</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <h1 data-i18n="appTitle">Exportador de calendario para UPF</h1>
+        <p data-i18n="appSubtitle">Exporta les teves classes i exàmens a Google Calendar.</p>
+      </div>
+      <button id="settingsBtn" class="lang-button" title="Idioma" aria-label="Idioma"><span class="globe">🌐</span><span id="langCode">CAT</span></button>
+    </header>
+
+    <section class="notice" id="pageNotice">
+      Obre el calendari de la UPF i prem exportar.
+    </section>
+
+    <details class="help-card" open>
+      <summary data-i18n="howToTitle">Com fer-ho servir</summary>
+      <div class="help-content">
+        <ol>
+          <li data-i18n-html="help1">Entra a la <strong>secretaria virtual de la UPF</strong>.</li>
+          <li data-i18n-html="help2">Obre el <strong>calendari de classes</strong>.</li>
+          <li data-i18n-html="help3">Tria la <strong>data inicial</strong> i la <strong>data final</strong>.</li>
+          <li data-i18n-html="help4">Prem <strong>Detectar matèries</strong>.</li>
+          <li data-i18n-html="help5">Marca les matèries que vols exportar.</li>
+          <li data-i18n-html="help6">Activa <strong>Crear un .ics per cada matèria seleccionada</strong> si vols importar cada matèria en un calendari diferent.</li>
+          <li data-i18n-html="help7">Prem <strong>Exportar .ics</strong>.</li>
+          <li data-i18n-html="help8">L'arxiu <strong>.ics</strong> és un arxiu de calendari. A Google Calendar, ves a <strong>Configuració → Importar i exportar → Importar</strong>, selecciona l'arxiu .ics i tria el calendari on vols afegir els esdeveniments.</li>
+        </ol>
+        <p class="important" data-i18n-html="helpImportant">
+          <strong>IMPORTANT:</strong> Per tenir colors a Google Calendar, crea un calendari per matèria i posa un color diferent a cada calendari. Després importa cada .ics de cada matèria al calendari corresponent.
+        </p>
+        <p class="import-note" data-i18n-html="importErrorNote">
+          Si Google Calendar mostra l'error <strong>“No hem pogut importar aquest fitxer. Torna-ho a provar d'aquí a una estona.”</strong>, espera 10 segons i torna a prémer importar.
+        </p>
+      </div>
+    </details>
+
+    <section class="card">
+      <label class="field">
+        <span data-i18n="startDate">Data inicial</span>
+        <input id="startDate" type="date">
+      </label>
+
+      <label class="field">
+        <span data-i18n="endDate">Data final</span>
+        <input id="endDate" type="date">
+      </label>
+
+      <label class="field">
+        <span data-i18n="calendarName">Nom del calendari</span>
+        <input id="calendarName" type="text" value="Horari UPF">
+      </label>
+
+      <label class="field">
+        <span data-i18n="fileName">Nom de l'arxiu</span>
+        <input id="fileName" type="text" value="upf_calendari.ics">
+      </label>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="eventFormatTitle">Format dels esdeveniments</h2>
+      <p class="mini" data-i18n="blockHint">Arrossega els blocs. L'aula es separa amb “|” automàticament.</p>
+
+      <div class="block-builder">
+        <div class="block-label" data-i18n="theoryFormat">Teoria</div>
+        <div id="theoryBlocks" class="blocks-row" data-kind="theory"></div>
+      </div>
+
+      <div class="block-builder">
+        <div class="block-label" data-i18n="seminarFormat">Seminari</div>
+        <div id="seminarBlocks" class="blocks-row" data-kind="seminar"></div>
+      </div>
+
+      <div class="block-builder">
+        <div class="block-label" data-i18n="examFormat">Examen</div>
+        <div id="examBlocks" class="blocks-row" data-kind="exam"></div>
+      </div>
+
+      <label class="check">
+        <input id="includeHolidays" type="checkbox">
+        <span data-i18n="includeHolidays">Incloure festius i vacances</span>
+      </label>
+
+      <label class="check">
+        <input id="includeDescription" type="checkbox">
+        <span data-i18n="includeDescription">Incloure descripció amb aula, edifici i observacions</span>
+      </label>
+
+      <label class="check">
+        <input id="splitBySubject" type="checkbox">
+        <span data-i18n="splitBySubject">Crear un .ics per cada matèria seleccionada</span>
+      </label>
+    </section>
+
+    <section class="card">
+      <div class="subjects-head">
+        <div>
+          <h2 data-i18n="subjectsTitle">Matèries</h2>
+          <p class="mini" data-i18n="subjectsSubtitle">Prem “Detectar matèries” per triar què vols exportar.</p>
+        </div>
+        <button id="detectSubjects" class="secondary small" data-i18n="detectSubjects">Detectar matèries</button>
+      </div>
+
+      <div class="subject-actions">
+        <button id="selectAllSubjects" class="ghost small" data-i18n="allSubjects">Totes</button>
+        <button id="clearSubjects" class="ghost small" data-i18n="noSubjects">Cap</button>
+      </div>
+
+      <div id="subjectsList" class="subjects-empty" data-i18n="subjectsEmpty">
+        Encara no hi ha matèries detectades.
+      </div>
+    </section>
+
+    <section class="actions single">
+      <button id="exportBtn" class="primary" data-i18n="exportIcs">Exportar .ics</button>
+    </section>
+
+    <section class="status hidden" id="status"></section>
+
+    <footer class="footer">
+      <p>Fet per: Artur Guasch</p>
+      <div class="footer-notices">
+        <p class="footer-small" data-i18n-html="unofficialNotice">Extensió no oficial. No està afiliada, avalada ni mantinguda per la Universitat Pompeu Fabra.</p>
+        <p class="footer-small" data-i18n-html="privacyNotice">L'extensió processa les dades localment al navegador. No recopila, ven ni transmet dades personals, credencials ni informació acadèmica a servidors externs.</p>
+      </div>
+      <p class="privacy-policy-link">
+        <a href="https://arturguasch.github.io/Exportador-de-calendario-para-UPF/" target="_blank" rel="noopener noreferrer" data-i18n="privacyPolicyLink">Política de privacitat</a>
+      </p>
+    </footer>
+  </main>
+
+  <section id="settingsModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 data-i18n="settingsTitle">Configuració</h2>
+        <button id="closeSettings" class="icon-button" aria-label="Tancar">×</button>
+      </div>
+
+      <label class="field">
+        <span data-i18n="language">Idioma</span>
+        <select id="languageSelect">
+          <option value="ca">Català</option>
+          <option value="es">Castellano</option>
+          <option value="en">English</option>
+        </select>
+      </label>
+
+      <div class="settings-actions">
+        <button id="resetSettings" class="ghost" data-i18n="reset">Restablir</button>
+        <button id="saveSettings" class="primary" data-i18n="save">Desar</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
