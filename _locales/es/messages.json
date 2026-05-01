@@ -1,0 +1,227 @@
+{
+  "allSubjects": {
+    "message": "Todas"
+  },
+  "appSubtitle": {
+    "message": "Exporta tus clases y exámenes a Google Calendar."
+  },
+  "appTitle": {
+    "message": "Exportador de calendario para UPF"
+  },
+  "blockHint": {
+    "message": "Arrastra los bloques según el orden en que quieres que aparezcan en el título del evento."
+  },
+  "calendarName": {
+    "message": "Nombre del calendario"
+  },
+  "createdMany": {
+    "message": "Archivos generados correctamente."
+  },
+  "createdOne": {
+    "message": "Archivo generado correctamente."
+  },
+  "creating": {
+    "message": "Creando archivo .ics..."
+  },
+  "detectSubjects": {
+    "message": "Detectar materias"
+  },
+  "detecting": {
+    "message": "Detectando materias..."
+  },
+  "endDate": {
+    "message": "Fecha final"
+  },
+  "error": {
+    "message": "Error"
+  },
+  "errorCalendarName": {
+    "message": "Pon un nombre para el calendario."
+  },
+  "errorDateOrder": {
+    "message": "La fecha final debe ser posterior a la fecha inicial."
+  },
+  "errorDates": {
+    "message": "Elige fecha inicial y fecha final."
+  },
+  "errorFileName": {
+    "message": "Pon un nombre para el archivo."
+  },
+  "errorNoSubjectsSelected": {
+    "message": "No hay ninguna materia seleccionada."
+  },
+  "errorOpenUpf": {
+    "message": "Abre primero el calendario de la UPF en esta pestaña."
+  },
+  "eventFormatTitle": {
+    "message": "Formato de eventos"
+  },
+  "examFormat": {
+    "message": "Examen"
+  },
+  "exportIcs": {
+    "message": "Exportar .ics"
+  },
+  "exported": {
+    "message": "Eventos exportados"
+  },
+  "exportedSubjects": {
+    "message": "Materias exportadas"
+  },
+  "extDescription": {
+    "message": "Exporta el calendario de la UPF a .ics con opciones por asignatura."
+  },
+  "extName": {
+    "message": "Exportador de calendario para UPF"
+  },
+  "fileName": {
+    "message": "Nombre del archivo"
+  },
+  "fmtRoomSubject": {
+    "message": "Aula | asignatura"
+  },
+  "fmtRoomTypeSubject": {
+    "message": "Aula | TIPO asignatura"
+  },
+  "fmtSubjectOnly": {
+    "message": "Solo asignatura"
+  },
+  "fmtSubjectRoom": {
+    "message": "Asignatura | aula"
+  },
+  "fmtTypeSubjectRoom": {
+    "message": "TIPO Asignatura | aula"
+  },
+  "formatPreviewExam": {
+    "message": "Examen"
+  },
+  "formatPreviewSeminar": {
+    "message": "Seminario"
+  },
+  "formatPreviewTheory": {
+    "message": "Teoría"
+  },
+  "help1": {
+    "message": "Entra en la <strong>secretaría virtual de la UPF</strong>."
+  },
+  "help2": {
+    "message": "Abre el <strong>calendario de clases</strong>."
+  },
+  "help3": {
+    "message": "Elige <strong>fecha inicial</strong> y <strong>fecha final</strong>."
+  },
+  "help4": {
+    "message": "Pulsa <strong>Detectar materias</strong>."
+  },
+  "help5": {
+    "message": "Marca las materias que quieres exportar."
+  },
+  "help6": {
+    "message": "Activa <strong>Crear un .ics por cada materia seleccionada</strong> si quieres importar cada materia en un calendario distinto."
+  },
+  "help7": {
+    "message": "Pulsa <strong>Exportar .ics</strong>."
+  },
+  "help8": {
+    "message": "El archivo <strong>.ics</strong> es un archivo de calendario. En Google Calendar, ve a <strong>Configuración → Importar y exportar → Importar</strong>, selecciona el archivo .ics y elige el calendario donde quieres añadir los eventos."
+  },
+  "helpImportant": {
+    "message": "<strong>IMPORTANTE:</strong> Para colores en Google Calendar, crea un calendario por materia y pon un color distinto a cada calendario. Luego importa cada .ics de cada materia en su calendario correspondiente."
+  },
+  "howToTitle": {
+    "message": "Cómo usarlo"
+  },
+  "ignored": {
+    "message": "Elementos ignorados"
+  },
+  "importErrorNote": {
+    "message": "Si Google Calendar muestra el error <strong>“No hemos podido importar este archivo. Vuelve a intentarlo dentro de un rato.”</strong>, espera 10 segundos y vuelve a pulsar importar."
+  },
+  "includeDescription": {
+    "message": "Incluir descripción extensiva"
+  },
+  "includeHolidays": {
+    "message": "Incluir festivos y vacaciones"
+  },
+  "language": {
+    "message": "Idioma"
+  },
+  "noSubjects": {
+    "message": "Ninguna"
+  },
+  "noSubjectsInRange": {
+    "message": "No se han detectado materias en este rango."
+  },
+  "openUpf": {
+    "message": "Abrir UPF"
+  },
+  "pageNotUpf": {
+    "message": "No estás en la secretaría virtual de la UPF. Abre el calendario y vuelve a pulsar la extensión."
+  },
+  "pageUpf": {
+    "message": "Página UPF detectada. Puedes exportar usando tu sesión abierta."
+  },
+  "preparing": {
+    "message": "Preparando exportación..."
+  },
+  "privacyNotice": {
+    "message": "La extensión procesa los datos localmente en el navegador. No recopila, vende ni transmite datos personales, credenciales ni información académica a servidores externos."
+  },
+  "privacyPolicyLink": {
+    "message": "Política de privacidad"
+  },
+  "reading": {
+    "message": "Leyendo eventos desde la sesión abierta en la UPF..."
+  },
+  "ready": {
+    "message": "Listo."
+  },
+  "received": {
+    "message": "Eventos recibidos"
+  },
+  "reset": {
+    "message": "Restablecer"
+  },
+  "save": {
+    "message": "Guardar"
+  },
+  "seminarFormat": {
+    "message": "Seminario"
+  },
+  "settingsSaved": {
+    "message": "Configuración guardada."
+  },
+  "settingsTitle": {
+    "message": "Configuración"
+  },
+  "splitBySubject": {
+    "message": "Crear un .ics por cada materia seleccionada"
+  },
+  "startDate": {
+    "message": "Fecha inicial"
+  },
+  "subjectsDetected": {
+    "message": "Materias detectadas"
+  },
+  "subjectsEmpty": {
+    "message": "Aún no hay materias detectadas."
+  },
+  "subjectsSubtitle": {
+    "message": "Pulsa “Detectar materias” para elegir qué quieres exportar."
+  },
+  "subjectsTitle": {
+    "message": "Materias"
+  },
+  "theoryFormat": {
+    "message": "Teoría"
+  },
+  "titleOrder": {
+    "message": "Orden del título"
+  },
+  "titleOrderHelp": {
+    "message": "Mueve los bloques para decidir el orden del título."
+  },
+  "unofficialNotice": {
+    "message": "Extensión no oficial. No está afiliada, avalada ni mantenida por la Universitat Pompeu Fabra."
+  }
+}

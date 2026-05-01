@@ -1,0 +1,227 @@
+{
+  "allSubjects": {
+    "message": "All"
+  },
+  "appSubtitle": {
+    "message": "Export your classes and exams to Google Calendar."
+  },
+  "appTitle": {
+    "message": "Calendar exporter for UPF"
+  },
+  "blockHint": {
+    "message": "Drag the blocks into the order you want them to appear in the event title."
+  },
+  "calendarName": {
+    "message": "Calendar name"
+  },
+  "createdMany": {
+    "message": "Files created successfully."
+  },
+  "createdOne": {
+    "message": "File created successfully."
+  },
+  "creating": {
+    "message": "Creating .ics file..."
+  },
+  "detectSubjects": {
+    "message": "Detect subjects"
+  },
+  "detecting": {
+    "message": "Detecting subjects..."
+  },
+  "endDate": {
+    "message": "End date"
+  },
+  "error": {
+    "message": "Error"
+  },
+  "errorCalendarName": {
+    "message": "Enter a calendar name."
+  },
+  "errorDateOrder": {
+    "message": "The end date must be after the start date."
+  },
+  "errorDates": {
+    "message": "Choose a start date and end date."
+  },
+  "errorFileName": {
+    "message": "Enter a file name."
+  },
+  "errorNoSubjectsSelected": {
+    "message": "No subject is selected."
+  },
+  "errorOpenUpf": {
+    "message": "Open the UPF calendar in this tab first."
+  },
+  "eventFormatTitle": {
+    "message": "Event format"
+  },
+  "examFormat": {
+    "message": "Exam"
+  },
+  "exportIcs": {
+    "message": "Export .ics"
+  },
+  "exported": {
+    "message": "Events exported"
+  },
+  "exportedSubjects": {
+    "message": "Subjects exported"
+  },
+  "extDescription": {
+    "message": "Export the UPF calendar to .ics with subject-based options."
+  },
+  "extName": {
+    "message": "Calendar exporter for UPF"
+  },
+  "fileName": {
+    "message": "File name"
+  },
+  "fmtRoomSubject": {
+    "message": "Room | subject"
+  },
+  "fmtRoomTypeSubject": {
+    "message": "Room | TYPE subject"
+  },
+  "fmtSubjectOnly": {
+    "message": "Subject only"
+  },
+  "fmtSubjectRoom": {
+    "message": "Subject | room"
+  },
+  "fmtTypeSubjectRoom": {
+    "message": "TYPE Subject | room"
+  },
+  "formatPreviewExam": {
+    "message": "Exam"
+  },
+  "formatPreviewSeminar": {
+    "message": "Seminar"
+  },
+  "formatPreviewTheory": {
+    "message": "Theory"
+  },
+  "help1": {
+    "message": "Open the <strong>UPF virtual secretary</strong>."
+  },
+  "help2": {
+    "message": "Open the <strong>class calendar</strong>."
+  },
+  "help3": {
+    "message": "Choose the <strong>start date</strong> and <strong>end date</strong>."
+  },
+  "help4": {
+    "message": "Click <strong>Detect subjects</strong>."
+  },
+  "help5": {
+    "message": "Select the subjects you want to export."
+  },
+  "help6": {
+    "message": "Enable <strong>Create one .ics per selected subject</strong> if you want to import each subject into a different calendar."
+  },
+  "help7": {
+    "message": "Click <strong>Export .ics</strong>."
+  },
+  "help8": {
+    "message": "The <strong>.ics</strong> file is a calendar file. In Google Calendar, go to <strong>Settings → Import & export → Import</strong>, select the .ics file and choose the calendar where you want to add the events."
+  },
+  "helpImportant": {
+    "message": "<strong>IMPORTANT:</strong> To get colors in Google Calendar, create one calendar per subject and assign a different color to each calendar. Then import each subject's .ics into its corresponding calendar."
+  },
+  "howToTitle": {
+    "message": "How to use it"
+  },
+  "ignored": {
+    "message": "Items ignored"
+  },
+  "importErrorNote": {
+    "message": "If Google Calendar shows the error <strong>“Could not import this file. Please try again later.”</strong>, wait 10 seconds and click import again."
+  },
+  "includeDescription": {
+    "message": "Include extended description"
+  },
+  "includeHolidays": {
+    "message": "Include holidays and breaks"
+  },
+  "language": {
+    "message": "Language"
+  },
+  "noSubjects": {
+    "message": "None"
+  },
+  "noSubjectsInRange": {
+    "message": "No subjects were detected in this range."
+  },
+  "openUpf": {
+    "message": "Open UPF"
+  },
+  "pageNotUpf": {
+    "message": "You are not on the UPF virtual secretary page. Open the calendar and click the extension again."
+  },
+  "pageUpf": {
+    "message": "UPF page detected. You can export using your active session."
+  },
+  "preparing": {
+    "message": "Preparing export..."
+  },
+  "privacyNotice": {
+    "message": "The extension processes data locally in the browser. It does not collect, sell, or transmit personal data, credentials, or academic information to external servers."
+  },
+  "privacyPolicyLink": {
+    "message": "Privacy policy"
+  },
+  "reading": {
+    "message": "Reading events from your active UPF session..."
+  },
+  "ready": {
+    "message": "Ready."
+  },
+  "received": {
+    "message": "Events received"
+  },
+  "reset": {
+    "message": "Reset"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "seminarFormat": {
+    "message": "Seminar"
+  },
+  "settingsSaved": {
+    "message": "Settings saved."
+  },
+  "settingsTitle": {
+    "message": "Settings"
+  },
+  "splitBySubject": {
+    "message": "Create one .ics per selected subject"
+  },
+  "startDate": {
+    "message": "Start date"
+  },
+  "subjectsDetected": {
+    "message": "Subjects detected"
+  },
+  "subjectsEmpty": {
+    "message": "No subjects detected yet."
+  },
+  "subjectsSubtitle": {
+    "message": "Click “Detect subjects” to choose what to export."
+  },
+  "subjectsTitle": {
+    "message": "Subjects"
+  },
+  "theoryFormat": {
+    "message": "Theory"
+  },
+  "titleOrder": {
+    "message": "Title order"
+  },
+  "titleOrderHelp": {
+    "message": "Move the blocks to decide the title order."
+  },
+  "unofficialNotice": {
+    "message": "Unofficial extension. It is not affiliated with, endorsed by, or maintained by Universitat Pompeu Fabra."
+  }
+}
