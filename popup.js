@@ -1,236 +1,39 @@
 const UPF_CALENDAR_URL = "https://secretariavirtual.upf.edu/pds/control/PubliHoraAlumCalendario?rnd=2141.0";
 const AJAX_PATH = "/pds/control/[Ajax]selecionarRangoHorarios";
 
-const I18N = {
-  ca: {
-    appTitle: "Exportador de calendari per a UPF",
-    appSubtitle: "Exporta les teves classes i exàmens a Google Calendar.",
-    unofficialNotice: "Extensió no oficial. No està afiliada, avalada ni mantinguda per la Universitat Pompeu Fabra.",
-    privacyNotice: "L\'extensió processa les dades localment al navegador. No recopila, ven ni transmet dades personals, credencials ni informació acadèmica a servidors externs.",
-    privacyPolicyLink: "Política de privacitat",
-    pageNotUpf: "No ets a la secretaria virtual de la UPF. Obre el calendari i torna a prémer l'extensió.",
-    pageUpf: "Pàgina UPF detectada. Pots exportar fent servir la sessió oberta.",
-    howToTitle: "Com fer-ho servir",
-    help1: "Entra a la <strong>secretaria virtual de la UPF</strong>.",
-    help2: "Obre el <strong>calendari de classes</strong>.",
-    help3: "Tria la <strong>data inicial</strong> i la <strong>data final</strong>.",
-    help4: "Prem <strong>Detectar matèries</strong>.",
-    help5: "Marca les matèries que vols exportar.",
-    help6: "Activa <strong>Crear un .ics per cada matèria seleccionada</strong> si vols importar cada matèria en un calendari diferent.",
-    help7: "Prem <strong>Exportar .ics</strong>.",
-    helpImportant: "<strong>IMPORTANT:</strong> Per tenir colors a Google Calendar, crea un calendari per matèria i posa un color diferent a cada calendari. Després importa cada .ics de cada matèria al calendari corresponent.",
-    importErrorNote: "Si Google Calendar mostra l'error <strong>“No hem pogut importar aquest fitxer. Torna-ho a provar d'aquí a una estona.”</strong>, espera 10 segons i torna a prémer importar.",
-    startDate: "Data inicial",
-    endDate: "Data final",
-    calendarName: "Nom del calendari",
-    fileName: "Nom de l'arxiu",
-    eventFormatTitle: "Format dels esdeveniments",
-    includeHolidays: "Incloure festius i vacances",
-    includeDescription: "Incloure descripció extensiva",
-    splitBySubject: "Crear un .ics per cada matèria seleccionada",
-    subjectsTitle: "Matèries",
-    subjectsSubtitle: "Prem “Detectar matèries” per triar què vols exportar.",
-    detectSubjects: "Detectar matèries",
-    allSubjects: "Totes",
-    noSubjects: "Cap",
-    subjectsEmpty: "Encara no hi ha matèries detectades.",
-    noSubjectsInRange: "No s'han detectat matèries en aquest rang.",
-    openUpf: "Obrir UPF",
-    exportIcs: "Exportar .ics",
-    ready: "Preparat.",
-    settingsTitle: "Configuració",
-    language: "Idioma",
-    titleOrder: "Ordre del títol",
-    titleOrderHelp: "Mou els blocs per decidir l’ordre del títol.",
-    blockHint: "Arrossega els blocs segons l’ordre que vols que aparegui al títol de l’esdeveniment.",
-    help8: "L’arxiu <strong>.ics</strong> és un arxiu de calendari. A Google Calendar, ves a <strong>Configuració → Importar i exportar → Importar</strong>, selecciona l’arxiu .ics i tria el calendari on vols afegir els esdeveniments.",
-    theoryFormat: "Teoria",
-    seminarFormat: "Seminari",
-    examFormat: "Examen",
-    fmtSubjectRoom: "Assignatura | aula",
-    fmtRoomSubject: "Aula | assignatura",
-    fmtTypeSubjectRoom: "TIPUS Assignatura | aula",
-    fmtRoomTypeSubject: "Aula | TIPUS assignatura",
-    fmtSubjectOnly: "Només assignatura",
-    reset: "Restablir",
-    save: "Desar",
-    formatPreviewTheory: "Teoria",
-    formatPreviewSeminar: "Seminari",
-    formatPreviewExam: "Examen",
-    errorDates: "Tria data inicial i data final.",
-    errorDateOrder: "La data final ha de ser posterior a la data inicial.",
-    errorCalendarName: "Posa un nom per al calendari.",
-    errorFileName: "Posa un nom per a l'arxiu.",
-    errorOpenUpf: "Obre primer el calendari de la UPF en aquesta pestanya.",
-    errorNoSubjectsSelected: "No hi ha cap matèria seleccionada.",
-    detecting: "Detectant matèries...",
-    subjectsDetected: "Matèries detectades",
-    preparing: "Preparant l'exportació...",
-    reading: "Llegint esdeveniments des de la sessió oberta a la UPF...",
-    createdOne: "Arxiu generat correctament.",
-    createdMany: "Arxius generats correctament.",
-    received: "Esdeveniments rebuts",
-    exported: "Esdeveniments exportats",
-    ignored: "Elements ignorats",
-    exportedSubjects: "Matèries exportades",
-    creating: "Creant arxiu .ics...",
-    error: "Error",
-    settingsSaved: "Configuració desada.",
-  },
-  es: {
-    appTitle: "Exportador de calendario para UPF",
-    appSubtitle: "Exporta tus clases y exámenes a Google Calendar.",
-    unofficialNotice: "Extensión no oficial. No está afiliada, avalada ni mantenida por la Universitat Pompeu Fabra.",
-    privacyNotice: "La extensión procesa los datos localmente en el navegador. No recopila, vende ni transmite datos personales, credenciales ni información académica a servidores externos.",
-    privacyPolicyLink: "Política de privacidad",
-    pageNotUpf: "No estás en la secretaría virtual de la UPF. Abre el calendario y vuelve a pulsar la extensión.",
-    pageUpf: "Página UPF detectada. Puedes exportar usando tu sesión abierta.",
-    howToTitle: "Cómo usarlo",
-    help1: "Entra en la <strong>secretaría virtual de la UPF</strong>.",
-    help2: "Abre el <strong>calendario de clases</strong>.",
-    help3: "Elige <strong>fecha inicial</strong> y <strong>fecha final</strong>.",
-    help4: "Pulsa <strong>Detectar materias</strong>.",
-    help5: "Marca las materias que quieres exportar.",
-    help6: "Activa <strong>Crear un .ics por cada materia seleccionada</strong> si quieres importar cada materia en un calendario distinto.",
-    help7: "Pulsa <strong>Exportar .ics</strong>.",
-    helpImportant: "<strong>IMPORTANTE:</strong> Para colores en Google Calendar, crea un calendario por materia y pon un color distinto a cada calendario. Luego importa cada .ics de cada materia en su calendario correspondiente.",
-    importErrorNote: "Si Google Calendar muestra el error <strong>“No hemos podido importar este archivo. Vuelve a intentarlo dentro de un rato.”</strong>, espera 10 segundos y vuelve a pulsar importar.",
-    startDate: "Fecha inicial",
-    endDate: "Fecha final",
-    calendarName: "Nombre del calendario",
-    fileName: "Nombre del archivo",
-    eventFormatTitle: "Formato de eventos",
-    includeHolidays: "Incluir festivos y vacaciones",
-    includeDescription: "Incluir descripción extensiva",
-    splitBySubject: "Crear un .ics por cada materia seleccionada",
-    subjectsTitle: "Materias",
-    subjectsSubtitle: "Pulsa “Detectar materias” para elegir qué quieres exportar.",
-    detectSubjects: "Detectar materias",
-    allSubjects: "Todas",
-    noSubjects: "Ninguna",
-    subjectsEmpty: "Aún no hay materias detectadas.",
-    noSubjectsInRange: "No se han detectado materias en este rango.",
-    openUpf: "Abrir UPF",
-    exportIcs: "Exportar .ics",
-    ready: "Listo.",
-    settingsTitle: "Configuración",
-    language: "Idioma",
-    titleOrder: "Orden del título",
-    titleOrderHelp: "Mueve los bloques para decidir el orden del título.",
-    blockHint: "Arrastra los bloques según el orden en que quieres que aparezcan en el título del evento.",
-    help8: "El archivo <strong>.ics</strong> es un archivo de calendario. En Google Calendar, ve a <strong>Configuración → Importar y exportar → Importar</strong>, selecciona el archivo .ics y elige el calendario donde quieres añadir los eventos.",
-    theoryFormat: "Teoría",
-    seminarFormat: "Seminario",
-    examFormat: "Examen",
-    fmtSubjectRoom: "Asignatura | aula",
-    fmtRoomSubject: "Aula | asignatura",
-    fmtTypeSubjectRoom: "TIPO Asignatura | aula",
-    fmtRoomTypeSubject: "Aula | TIPO asignatura",
-    fmtSubjectOnly: "Solo asignatura",
-    reset: "Restablecer",
-    save: "Guardar",
-    formatPreviewTheory: "Teoría",
-    formatPreviewSeminar: "Seminario",
-    formatPreviewExam: "Examen",
-    errorDates: "Elige fecha inicial y fecha final.",
-    errorDateOrder: "La fecha final debe ser posterior a la fecha inicial.",
-    errorCalendarName: "Pon un nombre para el calendario.",
-    errorFileName: "Pon un nombre para el archivo.",
-    errorOpenUpf: "Abre primero el calendario de la UPF en esta pestaña.",
-    errorNoSubjectsSelected: "No hay ninguna materia seleccionada.",
-    detecting: "Detectando materias...",
-    subjectsDetected: "Materias detectadas",
-    preparing: "Preparando exportación...",
-    reading: "Leyendo eventos desde la sesión abierta en la UPF...",
-    createdOne: "Archivo generado correctamente.",
-    createdMany: "Archivos generados correctamente.",
-    received: "Eventos recibidos",
-    exported: "Eventos exportados",
-    ignored: "Elementos ignorados",
-    exportedSubjects: "Materias exportadas",
-    creating: "Creando archivo .ics...",
-    error: "Error",
-    settingsSaved: "Configuración guardada.",
-  },
-  en: {
-    appTitle: "Calendar exporter for UPF",
-    appSubtitle: "Export your classes and exams to Google Calendar.",
-    unofficialNotice: "Unofficial extension. It is not affiliated with, endorsed by, or maintained by Universitat Pompeu Fabra.",
-    privacyNotice: "The extension processes data locally in the browser. It does not collect, sell, or transmit personal data, credentials, or academic information to external servers.",
-    privacyPolicyLink: "Privacy policy",
-    pageNotUpf: "You are not on the UPF virtual secretary page. Open the calendar and click the extension again.",
-    pageUpf: "UPF page detected. You can export using your active session.",
-    howToTitle: "How to use it",
-    help1: "Open the <strong>UPF virtual secretary</strong>.",
-    help2: "Open the <strong>class calendar</strong>.",
-    help3: "Choose the <strong>start date</strong> and <strong>end date</strong>.",
-    help4: "Click <strong>Detect subjects</strong>.",
-    help5: "Select the subjects you want to export.",
-    help6: "Enable <strong>Create one .ics per selected subject</strong> if you want to import each subject into a different calendar.",
-    help7: "Click <strong>Export .ics</strong>.",
-    helpImportant: "<strong>IMPORTANT:</strong> To get colors in Google Calendar, create one calendar per subject and assign a different color to each calendar. Then import each subject's .ics into its corresponding calendar.",
-    importErrorNote: "If Google Calendar shows the error <strong>“Could not import this file. Please try again later.”</strong>, wait 10 seconds and click import again.",
-    startDate: "Start date",
-    endDate: "End date",
-    calendarName: "Calendar name",
-    fileName: "File name",
-    eventFormatTitle: "Event format",
-    includeHolidays: "Include holidays and breaks",
-    includeDescription: "Include extended description",
-    splitBySubject: "Create one .ics per selected subject",
-    subjectsTitle: "Subjects",
-    subjectsSubtitle: "Click “Detect subjects” to choose what to export.",
-    detectSubjects: "Detect subjects",
-    allSubjects: "All",
-    noSubjects: "None",
-    subjectsEmpty: "No subjects detected yet.",
-    noSubjectsInRange: "No subjects were detected in this range.",
-    openUpf: "Open UPF",
-    exportIcs: "Export .ics",
-    ready: "Ready.",
-    settingsTitle: "Settings",
-    language: "Language",
-    titleOrder: "Title order",
-    titleOrderHelp: "Move the blocks to decide the title order.",
-    blockHint: "Drag the blocks into the order you want them to appear in the event title.",
-    help8: "The <strong>.ics</strong> file is a calendar file. In Google Calendar, go to <strong>Settings → Import & export → Import</strong>, select the .ics file and choose the calendar where you want to add the events.",
-    theoryFormat: "Theory",
-    seminarFormat: "Seminar",
-    examFormat: "Exam",
-    fmtSubjectRoom: "Subject | room",
-    fmtRoomSubject: "Room | subject",
-    fmtTypeSubjectRoom: "TYPE Subject | room",
-    fmtRoomTypeSubject: "Room | TYPE subject",
-    fmtSubjectOnly: "Subject only",
-    reset: "Reset",
-    save: "Save",
-    formatPreviewTheory: "Theory",
-    formatPreviewSeminar: "Seminar",
-    formatPreviewExam: "Exam",
-    errorDates: "Choose a start date and end date.",
-    errorDateOrder: "The end date must be after the start date.",
-    errorCalendarName: "Enter a calendar name.",
-    errorFileName: "Enter a file name.",
-    errorOpenUpf: "Open the UPF calendar in this tab first.",
-    errorNoSubjectsSelected: "No subject is selected.",
-    detecting: "Detecting subjects...",
-    subjectsDetected: "Subjects detected",
-    preparing: "Preparing export...",
-    reading: "Reading events from your active UPF session...",
-    createdOne: "File created successfully.",
-    createdMany: "Files created successfully.",
-    received: "Events received",
-    exported: "Events exported",
-    ignored: "Items ignored",
-    exportedSubjects: "Subjects exported",
-    creating: "Creating .ics file...",
-    error: "Error",
-    settingsSaved: "Settings saved.",
+let I18N = {};
+
+const SUPPORTED_LANGUAGES = ["ca", "es", "en"];
+
+function getDefaultLanguage() {
+  const uiLanguage = (typeof chrome !== "undefined" && chrome.i18n?.getUILanguage)
+    ? chrome.i18n.getUILanguage()
+    : "ca";
+
+  const baseLanguage = String(uiLanguage || "ca").toLowerCase().split("-")[0];
+  return SUPPORTED_LANGUAGES.includes(baseLanguage) ? baseLanguage : "ca";
+}
+
+async function loadLocaleMessages(language) {
+  const selectedLanguage = SUPPORTED_LANGUAGES.includes(language) ? language : getDefaultLanguage();
+
+  try {
+    const response = await fetch(chrome.runtime.getURL(`_locales/${selectedLanguage}/messages.json`));
+    const messages = await response.json();
+    I18N = messages;
+    settings.language = selectedLanguage;
+  } catch (error) {
+    if (selectedLanguage !== "ca") {
+      await loadLocaleMessages("ca");
+      return;
+    }
+
+    I18N = {};
   }
-};
+}
 
 const DEFAULT_SETTINGS = {
-  language: "ca",
+  language: getDefaultLanguage(),
   formats: {
     theory: ["subject", "room"],
     seminar: ["type", "group", "subject", "room"],
@@ -271,7 +74,7 @@ const els = {
 };
 
 function t(key) {
-  return I18N[settings.language]?.[key] || I18N.ca[key] || key;
+  return I18N[key]?.message || key;
 }
 
 function pad(value) {
@@ -884,6 +687,7 @@ function updateLanguageButton() {
 
 function applyI18n() {
   document.documentElement.lang = settings.language;
+  document.title = t("extName");
   updateLanguageButton();
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
@@ -970,6 +774,7 @@ function closeSettings() {
 async function saveSettingsFromForm() {
   const previousLanguage = settings.language;
   settings.language = els.languageSelect.value;
+  await loadLocaleMessages(settings.language);
 
   saveOrderFromContainer("theory");
   saveOrderFromContainer("seminar");
@@ -988,6 +793,7 @@ async function saveSettingsFromForm() {
 
 async function resetSettings() {
   settings = structuredClone(DEFAULT_SETTINGS);
+  await loadLocaleMessages(settings.language);
   await saveSettingsData();
   syncSettingsForm();
   applyI18n();
@@ -1012,8 +818,9 @@ els.settingsBtn.addEventListener("click", openSettings);
 els.closeSettings.addEventListener("click", closeSettings);
 els.saveSettings.addEventListener("click", saveSettingsFromForm);
 els.resetSettings.addEventListener("click", resetSettings);
-els.languageSelect.addEventListener("change", () => {
+els.languageSelect.addEventListener("change", async () => {
   settings.language = els.languageSelect.value;
+  await loadLocaleMessages(settings.language);
   applyI18n();
 });
 
@@ -1024,6 +831,7 @@ els.settingsModal.addEventListener("click", (event) => {
 (async function init() {
   setDefaultDates();
   await loadSettings();
+  await loadLocaleMessages(settings.language);
   syncSettingsForm();
   setDefaultTextsForLanguage();
   applyI18n();

@@ -1,4 +1,4 @@
-# Exportador de calendario para UPF, versión 1.0.0
+# Exportador de calendario para UPF, versión 1.0.1
 
 Extensión para Chrome y Edge que exporta el calendario de la UPF a archivos `.ics`.
 
