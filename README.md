@@ -1,4 +1,4 @@
-# Exportador d’horari i calendari UPF, versión 1.0.2
+# Exportador d’horari i calendari UPF, versión 1.0.3
 
 Extensión para Chrome y Edge que exporta el horario de clases de la UPF desde Secretaría Virtual o gestioacadémica a archivos `.ics` compatibles con Google Calendar, Apple Calendar, Outlook y otros calendarios.
 
@@ -21,10 +21,11 @@ La mejor solución es:
 3. En la extensión, activar `Crear un .ics por cada materia seleccionada`.
 4. Importar cada `.ics` al calendario correspondiente.
 
-## Cambios en la versión 1.0.2
+## Cambios en la versión 1.0.3
 
-- Se actualiza la versión del paquete de `1.0.1` a `1.0.2`.
+- Se actualiza la versión del paquete de `1.0.2` a `1.0.3`.
 - Se cambia el nombre a `Exportador d’horari i calendari UPF` y se mejora la descripción para SEO.
+- Se actualiza el enlace público de gestioacadémica para abrir directamente con entrada pública e idioma catalán.
 - Se elimina el permiso `tabs`; la extensión mantiene `activeTab`, `scripting`, `downloads` y `storage`.
 - Se añade soporte para `https://gestioacademica.upf.edu/*`, además de `https://secretariavirtual.upf.edu/*`.
 - El aviso inicial aparece en rojo cuando la pestaña actual no es una página compatible de la UPF.
