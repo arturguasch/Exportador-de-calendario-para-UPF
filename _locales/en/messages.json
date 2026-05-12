@@ -2,17 +2,17 @@
   "allSubjects": {
     "message": "All"
   },
+  "appResetDone": {
+    "message": "The extension has been reset and the default values have been restored."
+  },
   "appSubtitle": {
-    "message": "Export your classes and exams to Google Calendar."
+    "message": "Export your classes and exams to your favorite calendar."
   },
   "appTitle": {
-    "message": "Calendar exporter for UPF"
+    "message": "UPF timetable and calendar exporter"
   },
   "blockHint": {
     "message": "Drag the blocks into the order you want them to appear in the event title."
-  },
-  "calendarName": {
-    "message": "Calendar name"
   },
   "createdMany": {
     "message": "Files created successfully."
@@ -20,14 +20,32 @@
   "createdOne": {
     "message": "File created successfully."
   },
-  "creating": {
-    "message": "Creating .ics file..."
+  "darkModeLabel": {
+    "message": "Dark mode"
   },
-  "detectSubjects": {
-    "message": "Detect subjects"
+  "descriptionBuilding": {
+    "message": "Building"
+  },
+  "descriptionComment": {
+    "message": "Comment"
+  },
+  "descriptionGroup": {
+    "message": "Group"
+  },
+  "descriptionObservation": {
+    "message": "Observation"
+  },
+  "descriptionRoom": {
+    "message": "Room"
+  },
+  "descriptionType": {
+    "message": "Type"
   },
   "detecting": {
     "message": "Detecting subjects..."
+  },
+  "detectSubjects": {
+    "message": "Detect subjects"
   },
   "endDate": {
     "message": "End date"
@@ -35,17 +53,14 @@
   "error": {
     "message": "Error"
   },
-  "errorCalendarName": {
-    "message": "Enter a calendar name."
-  },
   "errorDateOrder": {
     "message": "The end date must be after the start date."
   },
   "errorDates": {
     "message": "Choose a start date and end date."
   },
-  "errorFileName": {
-    "message": "Enter a file name."
+  "errorNoEventsToExport": {
+    "message": "There are no events to export in this range with this selection."
   },
   "errorNoSubjectsSelected": {
     "message": "No subject is selected."
@@ -59,50 +74,26 @@
   "examFormat": {
     "message": "Exam"
   },
-  "exportIcs": {
-    "message": "Export .ics"
-  },
   "exported": {
     "message": "Events exported"
   },
   "exportedSubjects": {
     "message": "Subjects exported"
   },
+  "exportIcs": {
+    "message": "Export .ics"
+  },
   "extDescription": {
-    "message": "Export the UPF calendar to .ics with subject-based options."
+    "message": "Export your UPF class timetable from Virtual Secretary or gestioacad\u00e8mica to Google Calendar, Apple Calendar and Outlook."
+  },
+  "extensionVersion": {
+    "message": "Version"
   },
   "extName": {
-    "message": "Calendar exporter for UPF"
-  },
-  "fileName": {
-    "message": "File name"
-  },
-  "fmtRoomSubject": {
-    "message": "Room | subject"
-  },
-  "fmtRoomTypeSubject": {
-    "message": "Room | TYPE subject"
-  },
-  "fmtSubjectOnly": {
-    "message": "Subject only"
-  },
-  "fmtSubjectRoom": {
-    "message": "Subject | room"
-  },
-  "fmtTypeSubjectRoom": {
-    "message": "TYPE Subject | room"
-  },
-  "formatPreviewExam": {
-    "message": "Exam"
-  },
-  "formatPreviewSeminar": {
-    "message": "Seminar"
-  },
-  "formatPreviewTheory": {
-    "message": "Theory"
+    "message": "UPF timetable and calendar exporter"
   },
   "help1": {
-    "message": "Open the <strong>UPF virtual secretary</strong>."
+    "message": "Open the <a href=\"https://secretariavirtual.upf.edu\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>UPF virtual secretary</strong></a> <strong>(recommended for better accuracy)</strong> or <a href=\"https://gestioacademica.upf.edu/pds/consultaPublica/look[conpub]InicioPubHora?entradaPublica=true&idiomaPais=ca.ES\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>gestioacad\u00e8mica</strong></a>."
   },
   "help2": {
     "message": "Open the <strong>class calendar</strong>."
@@ -152,11 +143,8 @@
   "noSubjectsInRange": {
     "message": "No subjects were detected in this range."
   },
-  "openUpf": {
-    "message": "Open UPF"
-  },
   "pageNotUpf": {
-    "message": "You are not on the UPF virtual secretary page. Open the calendar and click the extension again."
+    "message": "You are not on the timetable from the <a href=\"https://secretariavirtual.upf.edu\" target=\"_blank\" rel=\"noopener noreferrer\">UPF virtual secretary</a> or from <a href=\"https://gestioacademica.upf.edu/pds/consultaPublica/look[conpub]InicioPubHora?entradaPublica=true&idiomaPais=ca.ES\" target=\"_blank\" rel=\"noopener noreferrer\">gestioacad\u00e8mica</a>. Open the calendar and click the extension again."
   },
   "pageUpf": {
     "message": "UPF page detected. You can export using your active session."
@@ -173,14 +161,11 @@
   "reading": {
     "message": "Reading events from your active UPF session..."
   },
-  "ready": {
-    "message": "Ready."
-  },
   "received": {
     "message": "Events received"
   },
-  "reset": {
-    "message": "Reset"
+  "resetExtension": {
+    "message": "Reset extension"
   },
   "save": {
     "message": "Save"
@@ -214,12 +199,6 @@
   },
   "theoryFormat": {
     "message": "Theory"
-  },
-  "titleOrder": {
-    "message": "Title order"
-  },
-  "titleOrderHelp": {
-    "message": "Move the blocks to decide the title order."
   },
   "unofficialNotice": {
     "message": "Unofficial extension. It is not affiliated with, endorsed by, or maintained by Universitat Pompeu Fabra."
